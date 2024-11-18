@@ -7,6 +7,7 @@ namespace YourNamespace.PageObjects.Login
         private By usernameField = By.Id("user-name");
         private By passwordField = By.Id("password");
         private By loginButton = By.Id("login-button");
+        private By errorMessage = By.CssSelector(".error-message");
         // Add other locators for the product page after login for assertion purposes
     }
 }
