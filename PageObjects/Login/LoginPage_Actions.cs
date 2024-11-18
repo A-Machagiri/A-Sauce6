@@ -20,6 +20,11 @@ namespace YourNamespace.PageObjects.Login
             webUtilities.Click(loginButton);
         }
 
+        public bool IsErrorMessageVisible()
+        {
+            return webUtilities.IsElementVisible(errorMessage);
+        }
+
         // Add other methods to interact with the product page after login
     }
 }
