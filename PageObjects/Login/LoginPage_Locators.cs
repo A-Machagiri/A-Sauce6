@@ -1,12 +1,13 @@
 using OpenQA.Selenium;
 
-namespace YourNamespace.PageObjects.Login
+namespace PageObjects.Login
 {
     public partial class LoginPage
     {
-        private By usernameField = By.Id("user-name");
-        private By passwordField = By.Id("password");
-        private By loginButton = By.Id("login-button");
-        // Add other locators for the product page after login for assertion purposes
+        public static By UsernameField = By.Id("username");
+        public static By PasswordField = By.Id("password");
+        public static By LoginButton = By.Id("login");
+        public static By ErrorMessage = By.Id("error");
+        public static By ProductPageElement = By.Id("productPage");
     }
 }
