@@ -1,25 +1,35 @@
-namespace YourNamespace.PageObjects.Login
+using Utilities;
+
+namespace PageObjects.Login
 {
     public partial class LoginPage
     {
         private WebUtilities webUtilities;
 
-        public LoginPage(WebUtilities webUtilities)
+        public LoginPage(WebUtilities utilities)
         {
-            this.webUtilities = webUtilities;
+            this.webUtilities = utilities;
         }
 
         public void EnterCredentials(string username, string password)
         {
-            webUtilities.SendKeys(usernameField, username);
-            webUtilities.SendKeys(passwordField, password);
+            webUtilities.SendKeys(UsernameField, username);
+            webUtilities.SendKeys(PasswordField, password);
         }
 
-        public void ClickLoginButton()
+        public void ClickLogin()
         {
-            webUtilities.Click(loginButton);
+            webUtilities.Click(LoginButton);
         }
 
-        // Add other methods to interact with the product page after login
+        public bool IsErrorMessageDisplayed()
+        {
+            return webUtilities.FindElement(ErrorMessage).Displayed;
+        }
+
+        public bool IsProductPageDisplayed()
+        {
+            return webUtilities.FindElement(ProductPageElement).Displayed;
+        }
     }
 }
