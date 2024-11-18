@@ -43,7 +43,7 @@ namespace YourNamespace.Test_Layer.StepDefinitions
         [Then("I should see an error message")]
         public void ThenIShouldSeeAnErrorMessage()
         {
-            // Assert that an error message is visible on the page
+            Assert.IsTrue(loginPage.IsErrorMessageVisible());
         }
     }
 }
